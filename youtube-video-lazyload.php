@@ -29,7 +29,7 @@ define('youtube-video-lazyload', '0.0.1');
  */
 function youtube_video_lazyload_assets()
 {
-    wp_register_script('y-video-lazyload', plugins_url('assets/js/lazyload.js', __FILE__), array(), time(),  true);
+    wp_register_script('yt-video-lazyload', plugins_url('assets/js/yt-lazyload.js', __FILE__), array(), time(),  true);
     wp_register_script('yt-video-script', plugins_url('assets/js/scripts.js', __FILE__), array(), time(),  true);
     wp_enqueue_script('yt-video-lazyload');
     wp_enqueue_script('yt-video-script');
@@ -41,3 +41,5 @@ function youtube_video_lazyload_assets()
 
 }
 add_action('wp_enqueue_scripts', 'youtube_video_lazyload_assets');
+
+
