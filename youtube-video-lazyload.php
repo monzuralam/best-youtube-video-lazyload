@@ -43,3 +43,12 @@ function youtube_video_lazyload_assets()
 add_action('wp_enqueue_scripts', 'youtube_video_lazyload_assets');
 
 
+function youtube_video_lazyload_shortcode($atts){
+    $atts = shortcode_atts(array(
+        'id'    =>  'P1aKNG4SJfg',
+        'thumb' =>  ''
+    ),$atts);
+    
+    return '<div class="yt-lazyload" data-id="'.$atts['id'].'" data-thumb="'.$atts['thumb'].'" data-logo="2"></div>';
+}
+add_shortcode('youtube_lazyload','youtube_video_lazyload_shortcode');
