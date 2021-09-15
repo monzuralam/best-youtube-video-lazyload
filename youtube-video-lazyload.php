@@ -48,7 +48,9 @@ function youtube_video_lazyload_shortcode($atts){
         'id'    =>  'P1aKNG4SJfg',
         'thumb' =>  ''
     ),$atts);
-    
-    return '<div class="yt-lazyload" data-id="'.$atts['id'].'" data-thumb="'.$atts['thumb'].'" data-logo="2"></div>';
+
+    $thumb = $atts['thumb'] ? $atts['thumb'] : 'https://i3.ytimg.com/vi/'.$atts['id'].'/0.jpg';
+
+    return '<div class="yt-lazyload" data-id="'.$atts['id'].'" data-thumb="'.$thumb.'" data-logo="2"></div>';
 }
 add_shortcode('youtube_lazyload','youtube_video_lazyload_shortcode');
