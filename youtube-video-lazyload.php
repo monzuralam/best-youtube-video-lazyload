@@ -2,15 +2,16 @@
 /**
  * Plugin Name:       Youtube Video Lazy Load
  * Plugin URI:        https://viserx.com
- * Description:       Best Youtube audio & video Lazyload for WordPress.
+ * Description:       Best Youtube video Lazyload for WordPress.
  * Version:           0.0.1
+ * Requires at least: 5.2
+ * Requires PHP:      7.0
  * Author:            Monzur Alam
  * Author URI:        https://profiles.wordpress.org/monzuralam
  * Text Domain:       youtube-video-lazyload
  * Domain Path :      /languages/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * GitHub Plugin URI: https://github.com/
  */
 
 // If this file is called directly, abort.
