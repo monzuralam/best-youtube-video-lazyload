@@ -7,6 +7,7 @@
  * Author:            Monzur Alam
  * Author URI:        https://profiles.wordpress.org/monzuralam
  * Text Domain:       youtube-video-lazyload
+ * Domain Path :      /languages/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * GitHub Plugin URI: https://github.com/
@@ -42,6 +43,10 @@ function youtube_video_lazyload_assets()
 }
 add_action('wp_enqueue_scripts', 'youtube_video_lazyload_assets');
 
+function youtube_video_lazyload_textdomain(){
+    load_plugin_textdomain('youtube-video-lazyload',false,dirname(__FILE__)."/languages");
+}
+add_action('plugins_loaded','youtube_video_lazyload_textdomain');
 
 function youtube_video_lazyload_shortcode($atts){
     $atts = shortcode_atts(array(
