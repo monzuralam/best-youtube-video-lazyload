@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name:       Youtube Video Lazy Load
+ * Plugin Name:       WP Youtube Video Lazy Load
  * Plugin URI:        https://viserx.com
  * Description:       Best Youtube video Lazyload for WordPress.
- * Version:           0.0.1
+ * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.0
  * Author:            Monzur Alam
  * Author URI:        https://profiles.wordpress.org/monzuralam
- * Text Domain:       youtube-video-lazyload
+ * Text Domain:       wp-youtube-video-lazyload
  * Domain Path :      /languages/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -21,15 +21,15 @@ if (!defined('ABSPATH')) {
 
 /**
  * Currently plugin version.
- * Start at version 0.0.1 and 
+ * Start at version 1.0.0 and 
  * Rename this for your plugin and update it as you release new versions.
  */
-define('youtube-video-lazyload', '0.0.1');
+define('wp-youtube-video-lazyload', '1.0.0');
 
 /**
  * enqueue style & script
  */
-function youtube_video_lazyload_assets()
+function wp_youtube_video_lazyload_assets()
 {
     wp_register_script('yt-video-lazyload', plugins_url('assets/js/yt-lazyload.js', __FILE__), array(), time(),  true);
     wp_register_script('yt-video-script', plugins_url('assets/js/scripts.js', __FILE__), array(), time(),  true);
@@ -42,14 +42,14 @@ function youtube_video_lazyload_assets()
     wp_enqueue_style('yt-video-style');
 
 }
-add_action('wp_enqueue_scripts', 'youtube_video_lazyload_assets');
+add_action('wp_enqueue_scripts', 'wp_youtube_video_lazyload_assets');
 
-function youtube_video_lazyload_textdomain(){
+function wp_youtube_video_lazyload_textdomain(){
     load_plugin_textdomain('youtube-video-lazyload',false,dirname(__FILE__)."/languages");
 }
-add_action('plugins_loaded','youtube_video_lazyload_textdomain');
+add_action('plugins_loaded','wp_youtube_video_lazyload_textdomain');
 
-function youtube_video_lazyload_shortcode($atts){
+function wp_youtube_video_lazyload_shortcode($atts){
     $atts = shortcode_atts(array(
         'id'    =>  'P1aKNG4SJfg',
         'thumb' =>  ''
@@ -59,4 +59,4 @@ function youtube_video_lazyload_shortcode($atts){
 
     return '<div class="yt-lazyload" data-id="'.$atts['id'].'" data-thumb="'.$thumb.'" data-logo="2"></div>';
 }
-add_shortcode('youtube_lazyload','youtube_video_lazyload_shortcode');
+add_shortcode('youtube_lazyload','wp_youtube_video_lazyload_shortcode');
